@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <title>Image Caption Generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        input[type="file"] {
+            margin-bottom: 1rem;
+        }
+
+        .caption {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .error {
+            margin-top: 1.5rem;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload an image to generate a caption</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required><br><br>
+            <input type="submit" value="Generate Caption">
+        </form>
+
+        {% if caption %}
+            <div class="caption">
+                <h3>Generated Caption:</h3>
+                <p>{{ caption }}</p>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
