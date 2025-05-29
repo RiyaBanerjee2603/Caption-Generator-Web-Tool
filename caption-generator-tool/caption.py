@@ -5,7 +5,7 @@ import google.generativeai as genai
 from PIL import Image
 
 # Setup Gemini API
-genai.configure(api_key="AIzaSyBKffrmXiJf57T3B35lFuT73wfRSjWxwPE")  # Replace with your actual API key
+genai.configure(api_key="API Key")  # Replace with your actual API key
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 
 UPLOAD_FOLDER = "Images"
